@@ -13,7 +13,9 @@ function App() {
   function persistTodos(newList) {
     localStorage.setItem("todos", JSON.stringify({ todos: newList }));
   }
+
   function addTodo(newTodo) {
+    if (!newTodo) return;
     const newTodoList = [...todos, newTodo];
     persistTodos(newTodoList);
     setTodos(newTodoList);
