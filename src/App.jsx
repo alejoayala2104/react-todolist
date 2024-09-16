@@ -14,10 +14,15 @@ function App() {
     setTodos(newTodoList);
   }
 
+  function deleteTodo(index) {
+    const newTodoList = todos.filter((todo, todoIndex) => todoIndex !== index);
+    setTodos(newTodoList);
+  }
+
   return (
     <>
       <TodoInput addTodo={addTodo} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} deleteTodo={deleteTodo} />
     </>
   );
 }
