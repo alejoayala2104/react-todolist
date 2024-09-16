@@ -8,6 +8,7 @@ function App() {
     "Drink water",
     "Brush your cats",
   ]);
+  const [todoValue, setTodoValue] = useState("");
 
   function addTodo(newTodo) {
     const newTodoList = [...todos, newTodo];
@@ -19,10 +20,20 @@ function App() {
     setTodos(newTodoList);
   }
 
+  function editTodo(index) {
+    const todoToBeEdited = todos[index];
+    setTodoValue(todoToBeEdited);
+    deleteTodo(index);
+  }
+
   return (
     <>
-      <TodoInput addTodo={addTodo} />
-      <TodoList todos={todos} deleteTodo={deleteTodo} />
+      <TodoInput
+        addTodo={addTodo}
+        todoValue={todoValue}
+        setTodoValue={setTodoValue}
+      />
+      <TodoList todos={todos} deleteTodo={deleteTodo} editTodo={editTodo} />
     </>
   );
 }
