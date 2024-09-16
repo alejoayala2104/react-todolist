@@ -1,6 +1,6 @@
-# React + Vite
+# React TODO App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Simple TODO App with delete and edit functions
 
 Currently, two official plugins are available:
 
